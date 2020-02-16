@@ -1,0 +1,17 @@
+{% extends "publico_base.njk" %}
+
+{% block titulo %}Recetas | Ficha{% endblock %}
+
+{% block contenido %}
+
+    <h1>Ficha de receta</h1>
+    <div>
+        <p><strong>Título:</strong> {{ receta.titulo }}</p>
+        <p><strong>Comensales:</strong> {{ receta.editorial }}</p>
+        <p><strong>Preparacion:</strong> {{ receta.preparacion }}</p>
+        <p><strong>Coccion:</strong> {{ receta.coccion }}</p>
+        <p><strong>Descripcion:</strong> {{ receta.descripcion }}</p>
+        <p><img src="/public/upload/{{ receta.imagen }}" width="30%" /></p>
+    </div>
+
+{% endblock %}

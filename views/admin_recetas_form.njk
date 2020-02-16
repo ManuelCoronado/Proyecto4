@@ -1,0 +1,43 @@
+{% extends "admin_base.njk" %}
+
+{% block titulo %}Recetas | Admin Form{% endblock %}
+
+{% block contenido %}
+
+    <h1>Inserción de nueva Receta</h1>
+
+    <form action="/admin/recetas" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" name="titulo" 
+                placeholder="Nombre de la receta" />
+        </div>
+        <div class="form-group">
+            <label for="comensales">Comensales:</label>
+            <input type="text" class="form-control" name="comensales"
+                placeholder="Numero de comensales" />
+        </div>
+        <div class="form-group">
+            <label for="preparacion">Preparacion:</label>
+            <input type="text" class="form-control" name="preparacion"
+                placeholder="Tiempo de preparacion" />
+        </div>
+        <div class="form-group">
+            <label for="coccion">Coccion:</label>
+            <input type="text" class="form-control" name="coccion"
+                placeholder="Tiempo de coccion" />
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" class="form-control" name="descripcion"
+                placeholder="Descripcion de la receta" />
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" class="form-control" name="imagen"
+                placeholder="Imagen de la receta" />
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+{% endblock %}

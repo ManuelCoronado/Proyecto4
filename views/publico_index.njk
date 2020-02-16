@@ -1,0 +1,29 @@
+{% extends "publico_base.njk" %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+    {% if error %}
+        <div style="color:red">
+            {{ error }}
+        </div>
+    {% endif %}
+    <table width="100%">
+        {% for receta in recetas %}
+            <tr>
+                {% if loop.index % 2 == 0 %}
+                    <td class="par">{{ receta.titulo }}</td>
+                {% else %}
+                    <td class="impar">{{ receta.titulo }}</td>
+                {% endif %}
+                <td>
+                    <a class="btn btn-success" href="/recetas/{{receta.id}}">Ver ficha</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>No hay recetas que mostrar.</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
