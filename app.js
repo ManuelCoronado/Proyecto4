@@ -69,4 +69,5 @@ app.use('/', publico);
 app.use('/admin', recetas);
 app.use('/auth', auth);
 // Puesta en marcha del servidor
-app.listen(8080);
+
+module.exports.app = app;
